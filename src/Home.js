@@ -11,7 +11,32 @@ import  axios  from 'axios';
 
 const Home = () => { 
 
-  const [value,setValue] = useState(1)
+  const [value,setValue] = useState(1);
+  const [slide,setSlide] = useState(0);
+
+  const makeslide = function(value){ 
+
+       if(value == 'r'){
+         
+          setSlide((prev)=>{
+             
+            return prev+50
+
+          })
+
+       }else{
+           
+          setSlide((prev)=>{
+             
+            return prev-50
+
+          })
+        
+
+       }
+     
+     
+  }
 
    const show = function(value) {
      
@@ -54,20 +79,18 @@ const Home = () => {
 
   return (
 
-    <div className='home' >
+    <div className='home' style={{gap:"5px",display:"flex",flexDirection:"row"}} >
       
       <h1 style={{color:"white",marginTop:"15px"}} >Okaare.in</h1> 
 
-      <Row>
-
-         <Col lg = {12} sm = {6}>
+      
                
               <motion.div
               
               
               
               className='myshadow' 
-              style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"10px",width:"390px",backgroundColor:"green"}} 
+              style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"110px",width:"190px",backgroundColor:"red"}} 
               initial = {{scale:0.5}} 
               animate = {{
                 rotate:value,
@@ -78,25 +101,43 @@ const Home = () => {
               >
               
                 
-                <Row>
-                    
-                </Row>
+               
             
               </motion.div>
-          
-          </Col>
-          <Col lg = {12} sm = {6}>
+         
+     
                
                <motion.div
                
                
                
                className='myshadow' 
-               style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"10px",width:"390px",backgroundColor:"green"}} 
+               style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"110px",width:"90px",backgroundColor:"blue"}} 
                initial = {{scale:0.5}} 
                animate = {{
                  rotate:-value,
                  scale:1
+               }} 
+               
+               
+               >
+               
+                 
+                 
+             
+               </motion.div>
+          
+     
+
+      <motion.div
+               
+               
+               
+               className='myshadow' 
+               style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"110px",width:"190px",backgroundColor:"black"}} 
+               initial = {{scale:0.5}} 
+               animate = {{
+                 x:slide
                }} 
                
                
@@ -108,9 +149,8 @@ const Home = () => {
                  </Row>
              
                </motion.div>
-           
-           </Col>
-      </Row>
+
+
   
      
     
@@ -123,9 +163,14 @@ const Home = () => {
 
       
       
-      <Button onClick={e=>show("p")} style={{width:"33%",marginTop:"50px",height:"50px",borderRadius:"15px"}} variant="primary">increase</Button>
+      <Button onClick={e=>show("p")} style={{width:"23%",marginTop:"50px",height:"50px",borderRadius:"15px"}} variant="primary">increase</Button>
       <br/>
-      <Button onClick={e=>show("n")} style={{width:"33%",marginTop:"50px",height:"50px",borderRadius:"15px"}} variant="primary">decrease</Button>
+      <Button onClick={e=>show("n")} style={{width:"23%",marginTop:"50px",height:"50px",borderRadius:"15px"}} variant="primary">decrease</Button>
+
+      <br/>
+      <Button onClick={e=>makeslide("r")} style={{width:"23%",marginTop:"50px",height:"50px",borderRadius:"15px"}} variant="primary">right</Button>
+      <br/>
+      <Button onClick={e=>makeslide("l")} style={{width:"23%",marginTop:"50px",height:"50px",borderRadius:"15px"}} variant="primary">left</Button>
 
     </div>
   )
