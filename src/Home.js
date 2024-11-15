@@ -17,11 +17,11 @@ const Home = () => {
      
        if(value == 'p'){
          setValue((prev)=>{
-          return prev+0.1
+          return prev+50
          })
        }else{
           setValue((prev)=>{
-            return prev-0.1
+            return prev-50
           })
        }
 
@@ -34,7 +34,7 @@ const Home = () => {
              
             try{
               const response = axios.get("http://localhost:5000/first_api");
-              console.log(response)
+              console.log(response.data)
             }catch(err){
                if(err){
                  console.log("api receiving failed")
@@ -47,7 +47,7 @@ const Home = () => {
         getValue();
         
     
-    })
+    },[])
 
   return (
     <div className='home' >
@@ -61,7 +61,12 @@ const Home = () => {
       className='myshadow' 
       style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"100px",width:"390px",backgroundColor:"red"}} 
       initial = {{scale:0.5}} 
-      animate = {{scale:value}} >
+      animate = {{
+        rotate:value
+      }} 
+      
+      
+      >
       
          
          <Row>
@@ -74,9 +79,10 @@ const Home = () => {
          </Row>
     
       </motion.div>
-      <div style={{height:"100px"}} >
 
-      </div>
+
+
+      
       
       <Button onClick={e=>show("p")} style={{width:"33%",marginTop:"50px",height:"50px",borderRadius:"15px"}} variant="primary">increase</Button>
       <br/>
