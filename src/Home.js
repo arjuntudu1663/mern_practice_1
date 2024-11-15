@@ -56,51 +56,66 @@ const Home = () => {
 
     <div className='home' >
       
-      <h1 style={{color:"white",marginTop:"15px"}} >Okaare.in</h1>
-      
-      <motion.div
-      
-      
-       
-      className='myshadow' 
-      style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"10px",width:"390px",backgroundColor:"green"}} 
-      initial = {{scale:0.5}} 
-      animate = {{
-        rotate:value,
-        scale:1
-      }} 
-      
-      
-      >
-      
-         
-         <Row>
-            
-         </Row>
-    
-      </motion.div>
-     
-      <hr/>
+      <h1 style={{color:"white",marginTop:"15px"}} >Okaare.in</h1> 
 
-      <motion.div
-      
-      
-       
-      className='myshadow' 
-      style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"10px",width:"390px",backgroundColor:"green"}} 
-      initial = {{scale:0.5}} 
-      animate = {{
-        rotate:-value,
-        scale:1
-      }} 
-      
-      
-      >
-      
-         
-       
+      <Row>
+
+         <Col lg = {12} sm = {6}>
+               
+              <motion.div
+              
+              
+              
+              className='myshadow' 
+              style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"10px",width:"390px",backgroundColor:"green"}} 
+              initial = {{scale:0.5}} 
+              animate = {{
+                rotate:value,
+                scale:1
+              }} 
+              
+              
+              >
+              
+                
+                <Row>
+                    
+                </Row>
+            
+              </motion.div>
+          
+          </Col>
+          <Col lg = {12} sm = {6}>
+               
+               <motion.div
+               
+               
+               
+               className='myshadow' 
+               style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"10px",width:"390px",backgroundColor:"green"}} 
+               initial = {{scale:0.5}} 
+               animate = {{
+                 rotate:-value,
+                 scale:1
+               }} 
+               
+               
+               >
+               
+                 
+                 <Row>
+                     
+                 </Row>
+             
+               </motion.div>
+           
+           </Col>
+      </Row>
+  
+     
     
-      </motion.div>
+
+   
 
       
 
