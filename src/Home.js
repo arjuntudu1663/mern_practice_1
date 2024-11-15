@@ -30,11 +30,14 @@ const Home = () => {
   
     useEffect(()=>{
      
-        const getValue = async function(){ 
+        const getValue  = async () => { 
              
             try{
+              
               const response = axios.get("http://localhost:5000/first_api");
               console.log(response.data)
+
+
             }catch(err){
                if(err){
                  console.log("api receiving failed")
@@ -50,6 +53,7 @@ const Home = () => {
     },[])
 
   return (
+
     <div className='home' >
       
       <h1 style={{color:"white",marginTop:"15px"}} >Okaare.in</h1>
@@ -59,10 +63,11 @@ const Home = () => {
       
        
       className='myshadow' 
-      style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"100px",width:"390px",backgroundColor:"red"}} 
+      style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"10px",width:"390px",backgroundColor:"green"}} 
       initial = {{scale:0.5}} 
       animate = {{
-        rotate:value
+        rotate:value,
+        scale:1
       }} 
       
       
@@ -70,15 +75,34 @@ const Home = () => {
       
          
          <Row>
-             <Col sm = {6} >
-                <BiAlignLeft size={30} color='white'/>
-             </Col>
-             <Col sm = {6} >
-                <h1 style={{color:"white",fontSize:"15px"}}>This is the most memorable story that we have been with</h1>
-             </Col>
+            
          </Row>
     
       </motion.div>
+     
+      <hr/>
+
+      <motion.div
+      
+      
+       
+      className='myshadow' 
+      style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"10px",width:"390px",backgroundColor:"green"}} 
+      initial = {{scale:0.5}} 
+      animate = {{
+        rotate:-value,
+        scale:1
+      }} 
+      
+      
+      >
+      
+         
+       
+    
+      </motion.div>
+
+      
 
 
 
