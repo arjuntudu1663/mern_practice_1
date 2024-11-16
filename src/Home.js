@@ -106,7 +106,7 @@ const Home = () => {
       </div>
        <p></p>
 
-       <div style={{backgroundColor:"",height:"50px",width:"55%",marginTop:"15px",padding:"5px"}} className='myCenterBox'>
+       <div style={{backgroundColor:"",height:"50px",marginTop:"15px",padding:"15px"}} className='myCenterBox'>
          
                 <Row>
                   <Col style={{backgroundColor:"",height:"auto"}} lg = {6} sm = {12} >
