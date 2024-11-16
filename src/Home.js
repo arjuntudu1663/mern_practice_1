@@ -89,7 +89,7 @@ const Home = () => {
           <p></p>
           
           
-          <div style={{backgroundColor:"black",marginTop:"15px",borderRadius:"15px",paddingLeft:"15px",paddingRight:"15px",height:"80px",display:"flex",alignItems:"center",justifyContent:"space-between"}} className='mybox'>
+          <div style={{backgroundColor:"black",marginTop:"5px",borderRadius:"15px",paddingLeft:"15px",paddingRight:"15px",height:"80px",display:"flex",alignItems:"center",justifyContent:"space-between"}} className='mybox'>
             
              <h1 className='header_font' style={{color:"white"}} >
               Okaare.In
