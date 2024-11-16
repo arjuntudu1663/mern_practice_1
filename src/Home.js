@@ -4,6 +4,7 @@ import { color, motion } from 'framer-motion'
 import { CiLocationArrow1 , CiTextAlignJustify ,CiBookmark  } from "react-icons/ci";
 import { Row,Col, Button ,Image,Form  } from 'react-bootstrap';
 import  axios  from 'axios';
+import {Tab,Tabs} from 'react-bootstrap'
 
 
 
@@ -13,6 +14,7 @@ const Home = () => {
 
   const [value,setValue] = useState(1);
   const [slide,setSlide] = useState(0);
+  const [image,setImage] = useState();
 
   const [posts,setPosts] = useState([]);
 
@@ -78,7 +80,7 @@ const Home = () => {
           <p></p>
           
           
-          <div style={{backgroundColor:"black",marginTop:"1px",borderRadius:"15px",height:"80px",display:"flex",padding:"15px",alignItems:"center",justifyContent:"space-between"}} className='mybox'>
+          <div style={{backgroundColor:"black",marginTop:"1px",borderRadius:"15px",height:"80px",display:"flex",padding:"35px",alignItems:"center",justifyContent:"space-between"}} className='mybox'>
             
              <h1 className='desc_font' style={{color:"white"}} >
               Okaare
@@ -105,10 +107,10 @@ const Home = () => {
                   <Col style={{height:"auto"}} lg = {6} sm = {12} >
                       
                       
-                      <h1 className='desc_font' >This is how we did</h1>
+                      <h1 className='desc_font' >Make a post</h1>
+
+
                       <Form>
-                     
-                        
                         <Form.Control value={post.name} onChange={e=>setPost((prev)=>{
                           return {...prev,name:e.target.value}
                         })}  placeholder='name' rows={3} />
@@ -123,13 +125,23 @@ const Home = () => {
                       <Button onClick={addPost} variant='dark' style={{borderRadius:"15px"}} >make a post</Button>
 
                   </Col>
+                
 
 
-                </Row>
-                <hr></hr>
-                {
+                </Row> 
+                   <p></p>
+                            <Tabs
+                  defaultActiveKey="profile"
+                  id="uncontrolled-tab-example"
+                  className="mb-3"
+                >
+                  <Tab eventKey="posts" title="Posts">
+                  <div style={{height:"800px",overflowY:"scroll",width:"100%"
+                }} >
+
+                  {
                   posts.map((x)=>{
-                    return <div style={{width:"100%",marginBottom:"15px",backgroundColor:"black",padding:"15px",borderRadius:"15px"}} className='myShadow' >
+                    return <div  style={{width:"100%",marginBottom:"15px",backgroundColor:"black",padding:"15px",borderRadius:"15px"}} className='myShadow' >
                       <h4 style={{color:"white"}}>{x.name}</h4>
                       <h1 style={{color:"white"}} >
                         
@@ -138,9 +150,28 @@ const Home = () => {
                     </div>
                   })
                 }
+
+                </div>
+                  </Tab>
+                  <Tab eventKey="profile" title="Profile">
+                   
+                    <p style={{opacity:"0.8"}}>Your Profile Picture</p>
+                    <h1 style={{fontWeight:"bold"}} >Arjun Tudu</h1>
+                    <p></p>
+                    <img src = {require("./pic.jpg")} style = {{width:"100%",objectFit:"cover",borderRadius:"15px"}} />
+                     <div style={{height:"50px"}}></div>
+                     <input type = "file"/>
+                     <p></p>
+                     <Button variant = "dark" style = {{borderRadius:"15px"}}>Upload your Photo</Button>
+                  </Tab>
+                  
+                </Tabs>
+                <hr></hr>
+              
          
        </div>
-
+      
+      
 
       </div>
 
