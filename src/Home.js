@@ -2,7 +2,7 @@ import React from 'react'
 import { useState,useEffect } from 'react';
 import { color, motion } from 'framer-motion'
 import { CiLocationArrow1 , CiTextAlignJustify ,CiBookmark  } from "react-icons/ci";
-import { Row,Col, Button } from 'react-bootstrap';
+import { Row,Col, Button ,Image } from 'react-bootstrap';
 import  axios  from 'axios';
 
 
@@ -89,7 +89,7 @@ const Home = () => {
           <p></p>
           
           
-          <div style={{backgroundColor:"black",marginTop:"5px",borderRadius:"15px",paddingLeft:"15px",paddingRight:"15px",height:"80px",display:"flex",alignItems:"center",justifyContent:"space-between"}} className='mybox'>
+          <div style={{backgroundColor:"black",marginTop:"1px",borderRadius:"15px",paddingLeft:"15px",paddingRight:"15px",height:"80px",display:"flex",alignItems:"center",justifyContent:"space-between"}} className='mybox'>
             
              <h1 className='header_font' style={{color:"white"}} >
               Okaare.In
@@ -104,7 +104,26 @@ const Home = () => {
 
           
       </div>
-       
+       <p></p>
+
+       <div style={{backgroundColor:"",height:"50px",width:"55%",marginTop:"15px",padding:"5px"}} className='myCenterBox'>
+         
+                <Row>
+                  <Col style={{backgroundColor:"",height:"auto"}} lg = {6} sm = {12} >
+                      <h1 className='desc_font' >This is how we did</h1>
+                  </Col>
+                  <Col style={{height:"auto"}} lg = {6} sm = {12} >
+                      
+                      <img style={{width:"100%",borderRadius:"15px"}} src={require("./pic.jpg")} />
+
+                  </Col>
+
+
+                </Row>
+         
+       </div>
+
+
       </>
 
 
