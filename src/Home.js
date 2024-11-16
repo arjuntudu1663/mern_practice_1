@@ -23,15 +23,22 @@ const Home = () => {
   })
 
 
-  const addPost = () => {
+  const addPost = async() => {
      
-    setPosts((prev)=>{
-       return [...prev,post]
-    })
-    setPost((prev)=>{
-      return {...prev,name:"",value:""}
-    })
+     try{
+       
+      const response = await axios.post("http://localhost:5000/create_post",post);
+      console.log(response)
 
+     }catch(e){
+        if(e){
+          console.log(" send api failed ")
+        }
+     }
+     
+     setPost((prev)=>{
+       return {...prev,name:"",value:""}
+     })
   }
 
   
@@ -41,9 +48,24 @@ const Home = () => {
     useEffect(()=>{
      
        
-        
+        const getData = async() => {
+           
+           try{
+            const response = await axios.get("http://localhost:5000/first_api");
+            setPosts(response.data)
+           }catch(e){
+              if(e){
+                 console.log("first_api getting failed")
+              }
+           }
+
+          
+
+        }
+
+        getData();
     
-    },[])
+    },[post.name])
 
   return (
 
@@ -58,7 +80,7 @@ const Home = () => {
           
           <div style={{backgroundColor:"black",marginTop:"1px",borderRadius:"15px",height:"80px",display:"flex",padding:"15px",alignItems:"center",justifyContent:"space-between"}} className='mybox'>
             
-             <h1 className='header_font' style={{color:"white"}} >
+             <h1 className='desc_font' style={{color:"white"}} >
               Okaare.In
              </h1>
 
