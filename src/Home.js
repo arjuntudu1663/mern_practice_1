@@ -81,7 +81,7 @@ const Home = () => {
           <div style={{backgroundColor:"black",marginTop:"1px",borderRadius:"15px",height:"80px",display:"flex",padding:"15px",alignItems:"center",justifyContent:"space-between"}} className='mybox'>
             
              <h1 className='desc_font' style={{color:"white"}} >
-              Okaare.In
+              Okaare
              </h1>
 
              <div style={{display:"flex",alignItems:"center",justifyContent:"space-around",width:"30%",flexDirection:"row",gap:"15px"}} >
