@@ -122,7 +122,7 @@ const Home = () => {
                         })} as="textarea" rows={3} />
                       </Form.Group>
                     </Form>
-                      <Button onClick={addPost} variant='dark' style={{borderRadius:"15px"}} >make a post</Button>
+                      <Button onClick={addPost} variant='dark' style={{borderRadius:"15px",padding:"15px",}} >Make a post</Button>
 
                   </Col>
                 
@@ -147,6 +147,7 @@ const Home = () => {
                         
                         {x.value}</h1>
                         <p>{x.date}</p>
+                        
                     </div>
                   })
                 }
@@ -156,13 +157,14 @@ const Home = () => {
                   <Tab eventKey="profile" title="Profile">
                    
                     <p style={{opacity:"0.8"}}>Your Profile Picture</p>
-                    <h1 style={{fontWeight:"bold"}} >Arjun Tudu</h1>
+                    <h1 style={{fontWeight:"bold",marginLeft:"10px"}} >Arjun Tudu</h1>
+                    <Button variant = "link" >Edit Name</Button>
                     <p></p>
-                    <img src = {require("./pic.jpg")} style = {{width:"100%",objectFit:"cover",borderRadius:"15px"}} />
+                    <img src = {require("./pic.jpg")} style = {{width:"70%",height:"150px",objectFit:"cover",borderRadius:"15px"}} />
                      <div style={{height:"50px"}}></div>
                      <input type = "file"/>
                      <p></p>
-                     <Button variant = "dark" style = {{borderRadius:"15px"}}>Upload your Photo</Button>
+                     <Button variant = "dark" style = {{borderRadius:"15px",padding:"15px"}} title='Upload Your Photo' >Upload your Photo</Button>
                   </Tab>
                   
                 </Tabs>
