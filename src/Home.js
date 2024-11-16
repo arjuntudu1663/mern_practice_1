@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
 import { color, motion } from 'framer-motion'
-import { BiAlignLeft  } from "react-icons/bi";
+import { CiLocationArrow1 , CiTextAlignJustify ,CiBookmark  } from "react-icons/ci";
 import { Row,Col, Button } from 'react-bootstrap';
 import  axios  from 'axios';
 
@@ -82,11 +82,32 @@ const Home = () => {
 
     
       
-      
+      <>
+      <p></p>
+      <div style={{width:"100%",marginTop:"15px",display:"flex",justifyContent:"center"}} className='myCenterBox'  >
+         
+          <p></p>
+          
+          
+          <div style={{backgroundColor:"black",marginTop:"15px",borderRadius:"15px",paddingLeft:"15px",paddingRight:"15px",height:"80px",display:"flex",alignItems:"center",justifyContent:"space-between"}} className='mybox'>
+            
+             <h1 className='header_font' style={{color:"white"}} >
+              Okaare.In
+             </h1>
 
-      <div style={{backgroundColor:"red",height:"80px"}} className='mybox'>
+             <div style={{display:"flex",alignItems:"center",justifyContent:"space-around",width:"30%",flexDirection:"row",gap:"15px"}} >
+             <CiLocationArrow1 color='white' size={30} />
+             <CiTextAlignJustify color='white' size = {30} />
+             <CiBookmark color = 'white' size = {30} />  
+            </div>
+          </div>
+
           
       </div>
+       
+      </>
+
+
                
           
 

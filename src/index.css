@@ -31,8 +31,26 @@
     
    .mybox{
      
-    width:35%;
+    width:55%;
 
    }
    
+}
+
+
+.header_font{
+   font-family: "Dancing Script", cursive;
+}
+
+.desc_font {
+   
+  font-family:  "Lexend", sans-serif; 
+
+}
+
+.myCenterBox{
+   
+  display: table;
+  margin: 0 auto;
+
 }
