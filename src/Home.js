@@ -60,6 +60,7 @@ const Home = () => {
             try{
               
               const response = axios.get("http://localhost:5000/first_api");
+
               console.log(response.data)
 
 
@@ -81,96 +82,13 @@ const Home = () => {
 
     <div className='home' style={{gap:"5px",display:"flex",flexDirection:"row"}} >
       
-      <h1 style={{color:"white",marginTop:"15px"}} >Okaare.in</h1> 
-
       
-               
-              <motion.div
-              
-              
-              
-              className='myshadow' 
-              style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"110px",width:"190px",backgroundColor:"red"}} 
-              initial = {{scale:0.5}} 
-              animate = {{
-                rotate:value,
-                scale:1
-              }} 
-              
-              
-              >
-              
-                
-               
-            
-              </motion.div>
-         
-     
-               
-               <motion.div
-               
-               
-               
-               className='myshadow' 
-               style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"110px",width:"90px",backgroundColor:"blue"}} 
-               initial = {{scale:0.5}} 
-               animate = {{
-                 rotate:-value,
-                 scale:1
-               }} 
-               
-               
-               >
-               
-                 
-                 
-             
-               </motion.div>
+
+      <div style={{backgroundColor:"red",height:"80px"}} className='mybox'>
           
-     
-
-      <motion.div
+      </div>
                
-               
-               
-               className='myshadow' 
-               style={{marginTop:"15%",padding:"20px", borderRadius:"15px",height:"110px",width:"190px",backgroundColor:"black"}} 
-               initial = {{scale:0.5}} 
-               animate = {{
-                 x:slide
-               }} 
-               
-               
-               >
-               
-                 
-                 <Row>
-                     
-                 </Row>
-             
-               </motion.div>
-
-
-  
-     
-    
-
-   
-
-      
-
-
-
-      
-      
-      <Button onClick={e=>show("p")} style={{width:"23%",marginTop:"50px",height:"50px",borderRadius:"15px"}} variant="primary">increase</Button>
-      <br/>
-      <Button onClick={e=>show("n")} style={{width:"23%",marginTop:"50px",height:"50px",borderRadius:"15px"}} variant="primary">decrease</Button>
-
-      <br/>
-      <Button onClick={e=>makeslide("r")} style={{width:"23%",marginTop:"50px",height:"50px",borderRadius:"15px"}} variant="primary">right</Button>
-      <br/>
-      <Button onClick={e=>makeslide("l")} style={{width:"23%",marginTop:"50px",height:"50px",borderRadius:"15px"}} variant="primary">left</Button>
+          
 
     </div>
   )

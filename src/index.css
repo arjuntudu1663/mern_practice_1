@@ -7,7 +7,7 @@
    
   height:100px;
   width: 100%;
-  background-color: green;
+ 
   padding-left: 15%;
   padding-top: 2%;
 
@@ -18,3 +18,21 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+
+@media only screen and (max-width:750px){
+   
+  .mybox{
+    width:100%;
+  }
+
+}
+
+@media only screen and (min-width:750px){
+    
+   .mybox{
+     
+    width:35%;
+
+   }
+   
+}
