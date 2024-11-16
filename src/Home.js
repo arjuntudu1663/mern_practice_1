@@ -80,7 +80,7 @@ const Home = () => {
 
   return (
 
-    <div className='home' style={{gap:"5px",display:"flex",flexDirection:"row"}} >
+    
       
       
 
@@ -90,7 +90,7 @@ const Home = () => {
                
           
 
-    </div>
+   
   )
 }
 
