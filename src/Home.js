@@ -19,7 +19,7 @@ const Home = () => {
   const [post,setPost] = useState({
      name:"",
      value:"",
-     date : new Date()
+    
   })
 
 
