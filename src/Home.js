@@ -17,11 +17,14 @@ const Home = () => {
   const [image,setImage] = useState();
   const [posts,setPosts] = useState([]);
 
+
+
   const [post,setPost] = useState({
      name:"",
      value:"",
     
   })
+
 
 
   const addPost = async() => {
@@ -33,7 +36,7 @@ const Home = () => {
 
      }catch(e){
         if(e){
-          console.log(" send api failed ")
+          console.log(" send api failed ");
         }
      }
      
@@ -70,10 +73,10 @@ const Home = () => {
 
   return (
 
-    
-      
       <div style={{padding:"15px"}}>
+
       <p></p>
+
       <div style={{marginTop:"15px",display:"flex",justifyContent:"center"}} className='myCenterBox'  >
          
           <p></p>
@@ -138,7 +141,8 @@ const Home = () => {
                   <div style={{height:"800px",overflowY:"scroll",width:"100%"
                 }} >
 
-                  {
+                {
+
                   posts.map((x)=>{
                     return <div  style={{width:"100%",marginBottom:"15px",backgroundColor:"black",padding:"15px",borderRadius:"15px"}} className='myShadow' >
                       <h4 style={{color:"white"}}>{x.name}</h4>
@@ -147,6 +151,7 @@ const Home = () => {
                         <p>{x.date}</p>
                     </div>
                   })
+
                 }
 
 
@@ -155,7 +160,7 @@ const Home = () => {
                   </Tab>
 
                   <Tab eventKey="profile" title="Profile">
-                    
+
                     <p style={{opacity:"0.8"}}>Your Profile Picture</p>
                     <h1 style={{fontWeight:"bold",marginLeft:"10px"}} >Arjun Tudu</h1>
                     <Button variant = "link" >Edit Name</Button>
@@ -169,6 +174,7 @@ const Home = () => {
                   </Tab>
                   
                 </Tabs>
+                
                 <hr></hr>
               
          
