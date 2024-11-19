@@ -2,7 +2,7 @@ import React from 'react'
 import { useState,useEffect } from 'react';
 import { color, motion } from 'framer-motion'
 import { CiLocationArrow1 , CiTextAlignJustify ,CiBookmark  } from "react-icons/ci";
-import { Row,Col, Button ,Image,Form  } from 'react-bootstrap';
+import { Row,Col, Button ,Image  } from 'react-bootstrap';
 import  axios  from 'axios';
 import {Tab,Tabs} from 'react-bootstrap'
 
@@ -112,18 +112,7 @@ const Home = () => {
                       <h1 className='desc_font' >Make a post</h1>
 
 
-                      <Form>
-                        <Form.Control value={post.name} onChange={e=>setPost((prev)=>{
-                          return {...prev,name:e.target.value}
-                        })}  placeholder='name' rows={3} />
-                    
-                      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                        <br></br>
-                        <Form.Control placeholder='type your post ....' value = {post.value} onChange={e=>setPost((prev)=>{
-                          return {...prev,value:e.target.value}
-                        })} as="textarea" rows={3} />
-                      </Form.Group>
-                    </Form>
+                     
                       <Button onClick={addPost} variant='dark' style={{borderRadius:"15px",padding:"15px",}} >Make a post</Button>
 
                   </Col>
