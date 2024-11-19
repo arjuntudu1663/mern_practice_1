@@ -132,48 +132,9 @@ const Home = () => {
 
                 </Row> 
                    <p></p>
-                            <Tabs
-                  defaultActiveKey="profile"
-                  id="uncontrolled-tab-example"
-                  className="mb-3"
-                >
-                  <Tab eventKey="posts" title="Posts">
-                  <div style={{height:"800px",overflowY:"scroll",width:"100%"
-                }} >
+                  <h1></h1>
 
-                {
-
-                  posts.map((x)=>{
-                    return <div  style={{width:"100%",marginBottom:"15px",backgroundColor:"black",padding:"15px",borderRadius:"15px"}} className='myShadow' >
-                      <h4 style={{color:"white"}}>{x.name}</h4>
-                      <h1 style={{color:"white"}} >   
-                        {x.value}</h1>
-                        <p>{x.date}</p>
-                    </div>
-                  })
-
-                }
-
-
-
-                </div>
-                  </Tab>
-
-                  <Tab eventKey="profile" title="Profile">
-
-                    <p style={{opacity:"0.8"}}>Your Profile Picture</p>
-                    <h1 style={{fontWeight:"bold",marginLeft:"10px"}} >Arjun Tudu</h1>
-                    <Button variant = "link" >Edit Name</Button>
-                    <p></p>
-                    <img src = {require("./pic.jpg")} style = {{width:"70%",height:"150px",objectFit:"cover",borderRadius:"15px"}} />
-                     <div style={{height:"50px"}}></div>
-                     <input type = "file"/>
-                     <p></p>
-                     <Button variant = "dark" style = {{borderRadius:"15px",padding:"15px"}} title='Upload Your Photo' >Upload your Photo</Button>
-                  
-                  </Tab>
-                  
-                </Tabs>
+                   <h1>example </h1>
                 
                 <hr></hr>
               
