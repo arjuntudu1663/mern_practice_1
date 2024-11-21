@@ -52,7 +52,7 @@ const Home = () => {
 
        console.log(post)
 
-       const response2 = await axios.post("http://localhost:5000/create_post",post);
+       const response2 = await axios.post("https://mern-practice-1-backend-ktgldla84-arjun-tudus-projects.vercel.app/create_post",post);
        console.log(response2)
 
        
@@ -76,7 +76,7 @@ const Home = () => {
         const getData = async() => {
            
            try{
-            const response = await axios.get("http://localhost:5000/first_api");
+            const response = await axios.get("https://mern-practice-1-backend-ktgldla84-arjun-tudus-projects.vercel.app/first_api");
             setPosts(response.data)
            }catch(e){
               if(e){
@@ -135,23 +135,23 @@ const Home = () => {
                       
 
 
-                      <div style={{boxShadow: "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",paddingLeft:"15px",paddingRight:"15px",paddingTop:"35px",paddingBottom:"35px",borderRadius:"15px"}} >
-                      <h1 className='desc_font' >Make a post</h1>
-                      <p></p>
-                      <input style ={{borderRadius:"5px",padding:"15px",border:"0px solid",backgroundColor:"#dedede",width:"100%"}} placeholder='name' onChange={e=>setPost((prev)=>{
-                      return {...prev,name:e.target.value}
-                     })} />
-                     <p></p>
-                      <input style ={{borderRadius:"5px",padding:"15px",height:"80px",border:"0px solid",backgroundColor:"#dedede",width:"100%"}} placeholder='type your post ....' onChange={e=>setPost((prev)=>{
-                      return {...prev,value:e.target.value}
-                     })} />
-                    <p></p>
-                    <input  onChange={e=>setImage(e.target.files[0])} style ={{borderRadius:"5px",marginBottom:"15px",padding:"15px",width:"100%"}} type='file' placeholder='choose a photo' />
-                    <p></p>
-                    <Button onClick={addPost} variant='dark' style={{borderRadius:"15px",padding:"15px",width:"100%"}} >Make a post</Button>
-                      </div>
+                          <div style={{boxShadow: "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",paddingLeft:"15px",paddingRight:"15px",paddingTop:"35px",paddingBottom:"35px",borderRadius:"15px"}} >
+                          <h1 className='desc_font' >Make a post</h1>
+                          <p></p>
+                          <input style ={{borderRadius:"5px",padding:"15px",border:"0px solid",backgroundColor:"#dedede",width:"100%"}} placeholder='name' onChange={e=>setPost((prev)=>{
+                          return {...prev,name:e.target.value}
+                        })} />
+                        <p></p>
+                          <input style ={{borderRadius:"5px",padding:"15px",height:"80px",border:"0px solid",backgroundColor:"#dedede",width:"100%"}} placeholder='type your post ....' onChange={e=>setPost((prev)=>{
+                          return {...prev,value:e.target.value}
+                        })} />
+                        <p></p>
+                        <input  onChange={e=>setImage(e.target.files[0])} style ={{borderRadius:"5px",marginBottom:"15px",padding:"15px",width:"100%"}} type='file' placeholder='choose a photo' />
+                        <p></p>
+                        <Button onClick={addPost} variant='dark' style={{borderRadius:"15px",padding:"15px",width:"100%"}} >Make a post</Button>
+                          </div>
 
-                  </Col>
+                      </Col>
                 
 
 

@@ -6,14 +6,12 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import 'reactjs-popup/dist/index.css';
 
-
-
 const Login = () => { 
      
   const navigation = useNavigate();
-  const [modalFlag,setModalFlag] = useState(false)
-   
-    const [register,setRegister] = useState({
+  const [modalFlag,setModalFlag] = useState(false);
+
+  const [register,setRegister] = useState({
         name : "",
         password: "",
         re_password:""
@@ -32,7 +30,7 @@ const Login = () => {
          
           if(register.password === register.re_password){
 
-            const response = await axios.post("http://localhost:5000/person_register",register);
+            const response = await axios.post("https://mern-practice-1-backend-ktgldla84-arjun-tudus-projects.vercel.app/person_register",register);
             if(response.status === 200){
                navigation("/home")
             }
@@ -57,10 +55,11 @@ const Login = () => {
         
       try{
          
-        const response = await axios.post("http://localhost:5000/login",person);
+        const response = await axios.post("https://mern-practice-1-backend-ktgldla84-arjun-tudus-projects.vercel.app/login",person);
+
         if(response.data.status){
             
-          setModalFlag(true)
+         
           navigation("/home")
             
         }else{
@@ -139,7 +138,7 @@ const Login = () => {
               <Button onClick={person_register} style={{width:"100%",fontWeight:"bold"}} variant='dark' >register</Button>
               <p></p>
               <Button onClick={e=>setFlag("login")} style={{width:"100%",fontWeight:"bold"}} variant='link' >Already Have a account ? Login</Button>
-              </>
+            </>
 
             break;
           
