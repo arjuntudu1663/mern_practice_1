@@ -52,7 +52,7 @@ const Home = () => {
 
        console.log(post)
 
-       const response2 = await axios.post("https://mern-practice-1-backend-ktgldla84-arjun-tudus-projects.vercel.app/create_post",post);
+       const response2 = await axios.post("https://mern-practice-1-backend.vercel.app/?vercelToolbarCode=BLOyWy38gwDrwVP/create_post",post);
        console.log(response2)
 
        
@@ -76,7 +76,7 @@ const Home = () => {
         const getData = async() => {
            
            try{
-            const response = await axios.get("https://mern-practice-1-backend-ktgldla84-arjun-tudus-projects.vercel.app/first_api");
+            const response = await axios.get("mern-practice-1-backend.vercel.app");
             setPosts(response.data)
            }catch(e){
               if(e){

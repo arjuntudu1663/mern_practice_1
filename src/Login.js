@@ -30,7 +30,7 @@ const Login = () => {
          
           if(register.password === register.re_password){
 
-            const response = await axios.post("https://mern-practice-1-backend-ktgldla84-arjun-tudus-projects.vercel.app/person_register",register);
+            const response = await axios.post("https://mern-practice-1-backend.vercel.app/?vercelToolbarCode=BLOyWy38gwDrwVP/person_register",register);
             if(response.status === 200){
                navigation("/home")
             }
@@ -49,13 +49,15 @@ const Login = () => {
 
       }
         
-    }
+    } 
+
+    
 
     const checkLogin = async function(){
         
       try{
          
-        const response = await axios.post("https://mern-practice-1-backend-ktgldla84-arjun-tudus-projects.vercel.app/login",person);
+        const response = await axios.post("https://mern-practice-1-backend.vercel.app/?vercelToolbarCode=BLOyWy38gwDrwVP/login",person);
 
         if(response.data.status){
             
