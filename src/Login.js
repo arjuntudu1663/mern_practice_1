@@ -9,12 +9,13 @@ import 'reactjs-popup/dist/index.css';
 const Login = () => { 
      
   const navigation = useNavigate();
-  const [modalFlag,setModalFlag] = useState(false);
+  const [errorModalFlag,setErrorModalFlag] = useState(false);
 
   const [register,setRegister] = useState({
         name : "",
         password: "",
         re_password:""
+        
     });
 
     const [person,setPerson] = useState({
@@ -30,9 +31,16 @@ const Login = () => {
          
           if(register.password === register.re_password){
 
-            const response = await axios.post("https://mern-practice-1-backend.vercel.app/?vercelToolbarCode=BLOyWy38gwDrwVP/person_register",register);
+            const response = await axios.post("http://localhost:5000/person_register",{
+              name:register.name,password:register.password
+            });
+
+            console.log(response,"<= register response");
+
             if(response.status === 200){
-               navigation("/home")
+
+               navigation("/home",{state:{id:response.data.id}});
+               
             }
 
           }else{
@@ -54,21 +62,18 @@ const Login = () => {
     
 
     const checkLogin = async function(){
-        
+
       try{
          
-        const response = await axios.post("https://mern-practice-1-backend.vercel.app/?vercelToolbarCode=BLOyWy38gwDrwVP/login",person);
-
+        const response = await axios.post("http://localhost:5000/login",person);
+        console.log(response.data,"<= login response")
+        
         if(response.data.status){
-            
-         
-          navigation("/home")
-            
-        }else{
            
-          setModalFlag(true);
+          navigation("/home",{state:{id:response.data.value}})
 
         }
+        
         
       }catch(e){
          
@@ -90,7 +95,8 @@ const Login = () => {
        case "login" :
 
          element =  <><div style={{width:"100%",display:"flex",justifyContent:"center"}} >
-                <h1 style={{fontWeight:"bold"}} >Okaare.<span style={{color:"green"}} >In</span></h1>
+                 
+                 <img src={require("./main_pic.jpg")} style={{height:"150px",width:"310px",borderRadius:"100%",objectFit:"cover"}} />
                 
               </div>
               <p></p>
@@ -116,7 +122,7 @@ const Login = () => {
 
         element = <>   
         <div style={{width:"100%",display:"flex",justifyContent:"center"}} >
-                <h1 style={{fontWeight:"bold"}} >Okaare.<span style={{color:"green"}} >In</span></h1>        
+        <img src={require("./main_pic.jpg")} style={{height:"150px",width:"310px",borderRadius:"100%",objectFit:"cover"}} />
         </div>
               <p></p>
 
@@ -155,12 +161,15 @@ const Login = () => {
     <div style = {{gap:"15px",paddingTop:"30%",paddingLeft:"35px",paddingRight:"35px"}}>
          
           {element}
-        <Button variant='link' >Forgot Password</Button>
-        <Modal style={{marginTop:"50%"}} show={modalFlag} >
-          <Modal.Body style={{display:"flex",justifyContent:"center"}}>
-              Loading . . . . .
-          </Modal.Body>
-       </Modal>
+            <Button variant='link' >Forgot Password</Button>
+            <Modal style={{marginTop:"50%"}} show={errorModalFlag} >
+              <Modal.Body style={{display:"flex",justifyContent:"center"}}>
+                  Wrong Credentials
+              </Modal.Body>
+              <Modal.Footer>
+                <Button onClick={e=>setErrorModalFlag(false)} > </Button>
+              </Modal.Footer>
+          </Modal>
     </div>
   )
 }
