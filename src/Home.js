@@ -60,7 +60,7 @@ const Home = () => {
        
     try{
       console.log("sending data",post)
-      const response2 = await axios.post("http://localhost:5000/create_post",post);
+      const response2 = await axios.post("https://mern-practice-1.vercel.app/create_post",post);
       console.log(response2)
       
     }catch(e){
@@ -84,7 +84,7 @@ const Home = () => {
         const getData = async() => {
            
            try{
-            const response = await axios.get("http://localhost:5000");
+            const response = await axios.get("https://mern-practice-1.vercel.app");
             console.log(response)
             setPosts(response.data)
            }catch(e){
@@ -106,7 +106,7 @@ const Home = () => {
 
             console.log(form,"sending find value");
 
-            const response = await axios.post("http://localhost:5000/person_find",{
+            const response = await axios.post("https://mern-practice-1.vercel.app/person_find",{
                "id":location.state.id
             });
             
@@ -184,7 +184,7 @@ const Home = () => {
                           <h5 className='desc_font' style={{fontWeight:"bold",marginBottom:"30px"}}  >Make a post</h5>
                           <p></p>
                          <div style={{display:"flex"}} >
-                         <input style ={{borderRadius:"5px",padding:"15px",height:"50px",border:"0px solid",backgroundColor:"white",width:"100%"}} placeholder='type your post ....' onChange={e=>setPost((prev)=>{
+                         <input style ={{borderRadius:"5px",padding:"15px",height:"50px",border:"0px solid",backgroundColor:"white",width:"100%",fontWeight:"bold"}} placeholder='type your post ....' onChange={e=>setPost((prev)=>{
                           return {...prev,value:e.target.value}
                         })} />  <CiImageOn onClick={e=>setImgModal(true)} color='#0c2b09'  size = {50} />
                          </div>
