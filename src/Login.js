@@ -31,7 +31,7 @@ const Login = () => {
          
           if(register.password === register.re_password){
 
-            const response = await axios.post("http://localhost:5005/person_register",{
+            const response = await axios.post("https://mern-practice-1-backend.vercel.app/person_register",{
               name:register.name,password:register.password
             });
 
@@ -65,7 +65,7 @@ const Login = () => {
 
       try{
          
-        const response = await axios.post("http://localhost:5005/login",person);
+        const response = await axios.post("https://mern-practice-1-backend.vercel.app/login",person);
         console.log(response.data,"<= login response")
         
         if(response.data.status){

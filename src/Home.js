@@ -60,7 +60,7 @@ const Home = () => {
        
     try{
       console.log("sending data",post)
-      const response2 = await axios.post("http://localhost:5005/create_post",post);
+      const response2 = await axios.post("https://mern-practice-1-backend.vercel.app/create_post",post);
       console.log(response2)
       
     }catch(e){
@@ -106,7 +106,7 @@ const Home = () => {
 
             console.log(form,"sending find value");
 
-            const response = await axios.post("http://localhost:5005/person_find",{
+            const response = await axios.post("https://mern-practice-1-backend.vercel.app/person_find",{
                "id":location.state.id
             });
             
