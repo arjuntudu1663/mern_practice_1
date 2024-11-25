@@ -93,7 +93,7 @@ const Home = () => {
  
  const likePost = async(id) => {
 
-   console.log(post)
+    console.log(id , " <==== sending post id")
        
     try{ 
 
