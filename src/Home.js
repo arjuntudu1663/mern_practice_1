@@ -90,7 +90,7 @@ const Home = () => {
             
             console.log(response," <========= getData response");
             setPosts(response.data);
-            window.location.reload();
+            
             
 
            
@@ -141,9 +141,10 @@ const Home = () => {
 
         getData();
         getProfile();
+        
        
     
-    },[])
+    },[posts])
 
   return (
 
