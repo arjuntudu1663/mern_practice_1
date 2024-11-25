@@ -28,9 +28,13 @@ const Posts = () => {
      
     getData();
 
-  })
+  },[posts])
   return (
-    <div>Posts</div>
+    <div>
+        {posts.map((x)=>{
+            <h1>{x.value}</h1>
+        })}
+    </div>
   )
 }
 
