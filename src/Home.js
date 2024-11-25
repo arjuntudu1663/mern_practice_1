@@ -93,7 +93,7 @@ const Home = () => {
  
  const likePost = async(id) => {
 
-  
+   console.log(post)
        
     try{ 
 
@@ -264,12 +264,12 @@ const Home = () => {
                           
                           <motion.div 
                           
-                          onClick={e=>likePost(x._id)}
+                         
                           initial = {{scale:1}}
                           whileHover={{scale:2}}
                           style={{marginLeft:"15px"}}
                           >
-                            <SlLike size ={30}  />
+                            <SlLike  onClick={e=>likePost(x._id)} size ={30}  />
 
                           </motion.div>
                        
