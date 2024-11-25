@@ -63,7 +63,9 @@ const Home = () => {
       console.log("sending data",post);
       
       const response2 = await axios.post("https://mern-practice-1-backend.vercel.app/create_post",post);
-      console.log(response2)
+      console.log(response2 , " <========= add post response");
+      
+
       
     }catch(e){
        console.log("image upload error")
