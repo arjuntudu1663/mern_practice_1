@@ -221,12 +221,14 @@ const Home = () => {
                   posts.map((x)=>{
                      if(x.imgUrl.length>0){
                       return <Card style={{marginBottom:"15px"}}>
-                         <Card.Header>   {x.name}</Card.Header>
-                         <Card.Img src = {x.imgUrl}  style={{width:"100%",borderRadius:"15px",height:"300px"}}/>
+                         <Card.Header><h1>{x.name}</h1></Card.Header>
+                         <Card.Img src = {x.imgUrl}  style={{width:"100%",height:"300px"}}/>
                          <Card.Footer>
                           <h5 style={{opacity:"0.5"}} >   
                          {x.value}</h5>
-                         </Card.Footer><Button variant='success' >Like</Button>
+                         <hr></hr>
+                         <Button variant='success' >Like</Button>
+                         </Card.Footer>
                       </Card>
                       
                      }
