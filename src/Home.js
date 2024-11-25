@@ -50,7 +50,7 @@ const Home = () => {
 
   const addPost = async() => {
     
-    
+    console.log(name)
        
     try{
 
@@ -101,7 +101,10 @@ const Home = () => {
    });
     
    console.log(response," <======== person find response");
-   setName(response.data.name);
+   const name = response.data.name
+   setPost((prev)=>{
+    return {...prev,name:name}
+   })
    
   }catch(e){
     
