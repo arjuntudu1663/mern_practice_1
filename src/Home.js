@@ -199,7 +199,7 @@ const Home = () => {
                       
 
 
-                          <div style={{boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",paddingLeft:"45px",paddingRight:"45px",paddingTop:"35px",paddingBottom:"35px",backgroundColor:"#97e98e",borderRadius:"15px"}} >
+                          <div style={{boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",paddingLeft:"35px",paddingRight:"35px",paddingTop:"35px",paddingBottom:"35px",backgroundColor:"#97e98e",borderRadius:"15px"}} >
                                 <h5 className='desc_font' style={{fontWeight:"bold",marginBottom:"30px"}}  >Make a post</h5>
                                 <p></p>
                               <div style={{display:"flex"}} >
