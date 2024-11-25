@@ -221,8 +221,8 @@ const Home = () => {
                   posts.map((x)=>{
                      if(x.imgUrl.length>0){
                       return <div  style={{width:"100%",marginBottom:"15px",backgroundColor:"white",padding:"15px",borderRadius:"15px"}} className='myShadow' >
-                      <h3 style={{color:"white"}}>  {x.name}</h3>
-                      <h5 style={{color:"white"}} >   
+                      <h3>  {x.name}</h3>
+                      <h5  >   
                         {x.value}</h5>
                         <p>{x.date}</p>
                           <img src = {x.imgUrl}  style={{width:"100%",borderRadius:"15px",height:"300px"}} />
