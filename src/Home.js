@@ -227,7 +227,7 @@ const Home = () => {
                           <h5 style={{opacity:"0.5"}} >   
                          {x.value}</h5>
                          <hr></hr>
-                         <Button variant='success' ><h1 style={{fontWeight:"bold"}} >Like</h1></Button>
+                         <Button variant='success' ><h4>Like</h4></Button>
                          </Card.Footer>
                       </Card>
                       
