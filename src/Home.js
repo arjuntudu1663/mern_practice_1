@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import { useState,useEffect } from 'react';
 import { color, motion } from 'framer-motion'
 import { CiLocationArrow1 , CiTextAlignJustify ,CiBookmark ,CiLogout ,CiImageOn ,BiLoaderCircle  } from "react-icons/ci";
@@ -33,6 +33,7 @@ const Home = () => {
   const [name,setName] = useState("");
   const [loader,setLoader] = useState(false);
   const [profile,setProfile] = useState({});
+  
   
   
 
@@ -132,7 +133,7 @@ const Home = () => {
         getProfile();
        
     
-    },[posts])
+    },[])
 
   return (
 
