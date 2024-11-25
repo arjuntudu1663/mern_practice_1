@@ -87,8 +87,18 @@ const Home = () => {
            
            try{
             const response = await axios.get("https://mern-practice-1-backend.vercel.app");
-            console.log(response , " <============ post get response")
-            setPosts(response.data)
+            
+            console.log(response," <========= getData response")
+
+            if(response.statusText === 'OK'){
+               
+              setPosts(response.data);
+              window.location.reload();
+
+            }
+            
+            
+
            }catch(e){
               if(e){
                  console.log("first_api getting failed")
