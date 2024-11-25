@@ -261,8 +261,17 @@ const Home = () => {
                         
                           <div style={{display:"flex",alignItems:"center",justifyContent:"flex-start"}} >
                           <h1 style={{marginLeft:"15px"}} > {x.like}</h1>
-                          <SlLike />
-                          <Button variant='success' onClick={e=>likePost(x._id)} ><h4>Like</h4></Button>
+                          
+                          <motion.div 
+                          
+                          initial = {{scale:1}}
+                          whileHover={{scale:2}}
+                          style={{marginRight:"15px"}}
+                          >
+                            <SlLike size ={30}  />
+
+                          </motion.div>
+                       
                           </div>
                          </Card.Footer>
 
