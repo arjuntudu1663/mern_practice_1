@@ -37,7 +37,8 @@ const Home = () => {
   const [post,setPost] = useState({
      name:"",
      value:"",
-     imgUrl:""
+     imgUrl:"",
+     like : 0
     
   })
 
@@ -91,9 +92,11 @@ const Home = () => {
  
  const likePost = async(id) => {
 
-  console.log(post)
+   
        
     try{ 
+
+      
         
       const response = await axios.post("https://mern-practice-1-backend.vercel.app/likePost",{
         id:id
