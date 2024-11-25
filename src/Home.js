@@ -244,7 +244,7 @@ const Home = () => {
                      if(x.imgUrl.length>0){
                       return <Card style={{marginBottom:"15px"}}>
                          <Card.Header style={{display:"flex",alignItems:"center",justifyContent:"flex-start"}}><CiUser size={30} /><h3 style={{opacity:"0.8"}}>{x.name}</h3>
-                         {x._id}
+                         
                          </Card.Header>
                          <Card.Img src = {x.imgUrl}  style={{width:"100%",height:"300px"}}/>
                          <Card.Footer>
