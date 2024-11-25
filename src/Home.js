@@ -154,7 +154,7 @@ const Home = () => {
          
           <p></p>
           
-          +----------
+          
           <div style={{backgroundColor:"black",width:"100%",
             marginTop:"1px",borderRadius:"15px",height:"80px",
             display:"flex",padding:"35px",alignItems:"center",
