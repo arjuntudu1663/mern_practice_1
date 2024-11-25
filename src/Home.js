@@ -18,8 +18,8 @@ const Home = () => {
 
    const navigation = useNavigate();
    const location = useLocation();
+   console.log(location.state.id,"<= profile _id");
 
-   console.log(location.state.id,"<= profile _id")
 
 
 
@@ -50,7 +50,7 @@ const Home = () => {
 
   const addPost = async() => {
     
-    console.log(name)
+    
        
     try{
       console.log("sending data",post);
@@ -124,7 +124,7 @@ const Home = () => {
 
         getData();
         getProfile();
-        console.log(name)
+        console.log(name , " <======== profile name")
         
        
     
