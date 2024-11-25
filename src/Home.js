@@ -34,11 +34,6 @@ const Home = () => {
   const [loader,setLoader] = useState(false);
   const [profile,setProfile] = useState({});
   
-  
-  
-
-
-
   const [post,setPost] = useState({
      name:"",
      value:"",
@@ -55,9 +50,7 @@ const Home = () => {
 
   const addPost = async() => {
     
-    setPost((prev)=>{
-      return {...prev,name:name}
-    })
+    console.log(name)
        
     try{
       console.log("sending data",post);
@@ -84,54 +77,38 @@ const Home = () => {
      console.log(response," <========= getData response");
      setPosts(response.data);
      
-     
-
-     
-
-
-
     }catch(e){
+
        if(e){
           console.log("first_api getting failed")
        }
     }
 
-   
 
  }
+
+
 
  const getProfile = async() => {
       
            
   try{ 
 
-   const form = new FormData();
-   form.append("id",location.state.id);
-
-   console.log(form,"sending find value");
-
    const response = await axios.post("https://mern-practice-1-backend.vercel.app/person_find",{
       "id":location.state.id
    });
-   
+    
+   console.log(response," <======== person find response");
    setName(response.data.name);
-   setPost((prev)=>{
-    return {...prev,name:name}
-   })
-   console.log(name , " <==== profile name");
    
-   
-
-   
-
   }catch(e){
+    
     if(e){
+
       console.log("get profile error")
+
     }
   }
-
- 
-
 }
 
  
@@ -147,6 +124,7 @@ const Home = () => {
 
         getData();
         getProfile();
+        console.log(name)
         
        
     
