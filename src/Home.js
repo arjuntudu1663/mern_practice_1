@@ -56,7 +56,7 @@ const Home = () => {
   const addPost = async() => {
     
     setPost((prev)=>{
-      return {...prev,name:name} 
+      return {...prev,name:name}
     })
        
     try{
@@ -64,12 +64,12 @@ const Home = () => {
       
       const response2 = await axios.post("https://mern-practice-1-backend.vercel.app/create_post",post);
       console.log(response2 , " <========= add post response");
-      window.location.reload()
-      
-
+      window.location.reload();
       
     }catch(e){
-       console.log("image upload error")
+
+       console.log("image upload error");
+
     }
      
     
@@ -83,6 +83,7 @@ const Home = () => {
      
      console.log(response," <========= getData response");
      setPosts(response.data);
+     
      
 
      
@@ -114,6 +115,9 @@ const Home = () => {
    });
    
    setName(response.data.name);
+   setPost((prev)=>{
+    return {...prev,name:name}
+   })
    console.log(name , " <==== profile name");
    
    
@@ -195,13 +199,13 @@ const Home = () => {
                       
 
 
-                          <div style={{boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",paddingLeft:"15px",paddingRight:"15px",paddingTop:"35px",paddingBottom:"35px",backgroundColor:"#97e98e",borderRadius:"15px"}} >
-                          <h5 className='desc_font' style={{fontWeight:"bold",marginBottom:"30px"}}  >Make a post</h5>
-                          <p></p>
-                         <div style={{display:"flex"}} >
-                         <input style ={{borderRadius:"5px",padding:"15px",height:"50px",border:"0px solid",backgroundColor:"white",width:"100%",fontWeight:"bold"}} placeholder='type your post ....' onChange={e=>setPost((prev)=>{
-                          return {...prev,value:e.target.value}
-                        })} />  <CiImageOn onClick={e=>setImgModal(true)} color='#0c2b09'  size = {50} />
+                          <div style={{boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",paddingLeft:"45px",paddingRight:"45px",paddingTop:"35px",paddingBottom:"35px",backgroundColor:"#97e98e",borderRadius:"15px"}} >
+                                <h5 className='desc_font' style={{fontWeight:"bold",marginBottom:"30px"}}  >Make a post</h5>
+                                <p></p>
+                              <div style={{display:"flex"}} >
+                              <input style ={{borderRadius:"5px",padding:"15px",height:"50px",border:"0px solid",backgroundColor:"white",width:"100%",fontWeight:"bold"}} placeholder='type your post ....' onChange={e=>setPost((prev)=>{
+                                return {...prev,value:e.target.value}
+                              })} />  <CiImageOn onClick={e=>setImgModal(true)} color='#0c2b09'  size = {50} />
                          </div>
 
                         
