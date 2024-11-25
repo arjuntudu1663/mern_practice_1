@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react'
 import { useState,useEffect } from 'react';
 import { color, motion } from 'framer-motion'
-import { CiLocationArrow1 , CiTextAlignJustify ,CiBookmark ,CiLogout ,CiImageOn ,BiLoaderCircle  } from "react-icons/ci";
+import { CiLocationArrow1 , CiTextAlignJustify ,CiBookmark ,CiLogout ,CiImageOn ,BiLoaderCircle ,CiUser  } from "react-icons/ci";
 import { Row,Col, Button ,Image,Form, Modal  } from 'react-bootstrap';
 import Loader from "react-js-loader";
 
@@ -221,7 +221,10 @@ const Home = () => {
                   posts.map((x)=>{
                      if(x.imgUrl.length>0){
                       return <div  style={{width:"100%",border:"1px solid",marginBottom:"15px",backgroundColor:"white",padding:"15px",borderRadius:"15px"}} className='myShadow' >
+                      <div style={{display:"flex",width:"100%",justifyContent:"center"}} >
+                      <CiUser size={40} />
                       <h3>  {x.name}</h3>
+                      </div>
                       <hr></hr>
                       <h5 style={{opacity:"0.5"}} >   
                         {x.value}</h5>
