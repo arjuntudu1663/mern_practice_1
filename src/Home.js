@@ -8,7 +8,6 @@ import Loader from "react-js-loader";
 import  axios  from 'axios';
 import {Tab,Tabs} from 'react-bootstrap'
 import { useNavigate ,useParams ,useLocation } from 'react-router';
-import Posts from './Posts';
 
 const imgBBApi = "e34b686ea01e7391d28fa5bb390e65bb";
 
@@ -27,6 +26,7 @@ const Home = () => {
   const [value,setValue] = useState(1);
   const [slide,setSlide] = useState(0);
   const [image,setImage] = useState();
+  const [posts,setPosts] = useState([]);
   const [imgUrl,setImageUrl] = useState();
   const [imgModal,setImgModal] = useState(false);
   const [refresh,setRefresh] = useState(false);
@@ -64,7 +64,7 @@ const Home = () => {
       
       const response2 = await axios.post("https://mern-practice-1-backend.vercel.app/create_post",post);
       console.log(response2 , " <========= add post response");
-      window.location.reload();
+      window.location.reload()
       
 
       
@@ -75,7 +75,29 @@ const Home = () => {
     
   }
 
-  
+  const getData = async() => {
+           
+    try{
+
+     const response = await axios.get("https://mern-practice-1-backend.vercel.app");
+     
+     console.log(response," <========= getData response");
+     setPosts(response.data);
+     
+
+     
+
+
+
+    }catch(e){
+       if(e){
+          console.log("first_api getting failed")
+       }
+    }
+
+   
+
+ }
 
  const getProfile = async() => {
       
@@ -119,7 +141,7 @@ const Home = () => {
       
      
 
-     
+        getData();
         getProfile();
         
        
@@ -205,7 +227,21 @@ const Home = () => {
                 
                 <p></p>
 
-                 <Posts/>
+                {
+
+                  posts.map((x)=>{
+                     if(x.imgUrl.length>0){
+                      return <div  style={{width:"100%",marginBottom:"15px",backgroundColor:"black",padding:"15px",borderRadius:"15px"}} className='myShadow' >
+                      <h4 style={{color:"white"}}>{x.name}</h4>
+                      <h1 style={{color:"white"}} >   
+                        {x.value}</h1>
+                        <p>{x.date}</p>
+                          <img src = {x.imgUrl}  style={{width:"100%",borderRadius:"15px",height:"300px"}} />
+                    </div>
+                     }
+                  })
+
+                }
 
 
 
