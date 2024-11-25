@@ -2,7 +2,7 @@ import React, { useReducer } from 'react'
 import { useState,useEffect } from 'react';
 import { color, motion } from 'framer-motion'
 import { CiLocationArrow1 , CiTextAlignJustify ,CiBookmark ,CiLogout ,CiImageOn ,BiLoaderCircle ,CiUser  } from "react-icons/ci";
-import { Row,Col, Button ,Image,Form, Modal  } from 'react-bootstrap';
+import { Row,Col, Button ,Image,Form, Modal, Card  } from 'react-bootstrap';
 import Loader from "react-js-loader";
 
 import  axios  from 'axios';
@@ -220,17 +220,15 @@ const Home = () => {
 
                   posts.map((x)=>{
                      if(x.imgUrl.length>0){
-                      return <div  style={{width:"100%",border:"0px solid",marginBottom:"35px",backgroundColor:"white",padding:"15px",borderRadius:"15px"}} className='myShadow' >
-                      <div style={{display:"flex",width:"100%",alignItems:"center",justifyContent:"flex-start"}} >
-                      <CiUser size={30} />
-                      <p style={{opacity:"1"}}>  {x.name}</p>
-                      </div>
-                      <hr></hr>
-                      <h5 style={{opacity:"0.5"}} >   
-                        {x.value}</h5>
-                        <p>{x.date}</p>
-                          <img src = {x.imgUrl}  style={{width:"100%",boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",borderRadius:"15px",height:"300px"}} />
-                    </div>
+                      return <Card style={{marginBottom:"15px"}}>
+                         <Card.Header> <p style={{opacity:"1"}}>  {x.name}</p></Card.Header>
+                         <Card.Img src = {x.imgUrl}  style={{width:"100%",boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",borderRadius:"15px",height:"300px"}}/>
+                         <Card.Footer>
+                          <h5 style={{opacity:"0.5"}} >   
+                         {x.value}</h5>
+                         </Card.Footer><Button variant='success' >Like</Button>
+                      </Card>
+                      
                      }
                   })
 
