@@ -92,7 +92,7 @@ const Home = () => {
  
  const likePost = async(id) => {
 
-   
+   console.log(id)
        
     try{ 
 
@@ -101,7 +101,8 @@ const Home = () => {
       const response = await axios.post("https://mern-practice-1-backend.vercel.app/likePost",{
         id:id
       });
-      console.log(response)
+
+      console.log(response);
       
 
     }catch(e){
