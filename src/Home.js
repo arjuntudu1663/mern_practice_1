@@ -90,6 +90,8 @@ const Home = () => {
  }
  
  const likePost = async(id) => {
+
+  console.log(post)
        
     try{ 
         
