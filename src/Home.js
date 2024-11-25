@@ -92,7 +92,8 @@ const Home = () => {
 
 
  const getProfile = async() => {
-      
+  
+  
            
   try{ 
 
@@ -102,6 +103,7 @@ const Home = () => {
     
    console.log(response," <======== person find response");
    const name = response.data.name
+
    setPost((prev)=>{
     return {...prev,name:name}
    })
@@ -218,10 +220,10 @@ const Home = () => {
 
                   posts.map((x)=>{
                      if(x.imgUrl.length>0){
-                      return <div  style={{width:"100%",marginBottom:"15px",backgroundColor:"black",padding:"15px",borderRadius:"15px"}} className='myShadow' >
-                      <h4 style={{color:"white"}}>{x.name}</h4>
-                      <h1 style={{color:"white"}} >   
-                        {x.value}</h1>
+                      return <div  style={{width:"100%",marginBottom:"15px",backgroundColor:"white",padding:"15px",borderRadius:"15px"}} className='myShadow' >
+                      <h3 style={{color:"white"}}>  {x.name}</h3>
+                      <h5 style={{color:"white"}} >   
+                        {x.value}</h5>
                         <p>{x.date}</p>
                           <img src = {x.imgUrl}  style={{width:"100%",borderRadius:"15px",height:"300px"}} />
                     </div>
