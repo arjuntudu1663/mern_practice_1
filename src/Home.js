@@ -104,6 +104,7 @@ const Home = () => {
       });
 
       console.log(response)
+      window.location.reload();
       
 
     }catch(e){
