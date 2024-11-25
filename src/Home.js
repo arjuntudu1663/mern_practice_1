@@ -258,8 +258,10 @@ const Home = () => {
                          {x.value}</h5>
                          <hr></hr>
                         
+                          <div style={{display:"flex",alignItems:"center",justifyContent:"flex-start"}} >
                           <h1 style={{marginLeft:"15px"}} > {x.like}</h1>
                           <Button variant='success' onClick={e=>likePost(x._id)} ><h4>Like</h4></Button>
+                          </div>
                          </Card.Footer>
 
                       </Card>
