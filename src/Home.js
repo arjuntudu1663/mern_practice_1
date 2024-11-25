@@ -59,7 +59,8 @@ const Home = () => {
     })
        
     try{
-      console.log("sending data",post)
+      console.log("sending data",post);
+      
       const response2 = await axios.post("https://mern-practice-1-backend.vercel.app/create_post",post);
       console.log(response2)
       
@@ -85,7 +86,7 @@ const Home = () => {
            
            try{
             const response = await axios.get("https://mern-practice-1-backend.vercel.app");
-            console.log(response)
+            console.log(response , " <============ post get response")
             setPosts(response.data)
            }catch(e){
               if(e){
@@ -195,7 +196,7 @@ const Home = () => {
 
                         <Button onClick={e=>{
                            addPost();
-                           window.location.reload();
+                           
                         }} variant='dark' style={{borderRadius:"15px",backgroundColor:"green",border:"0px solid",padding:"15px",width:"100%",fontWeight:"bold"}} > Make a post</Button>
                           </div>
 
