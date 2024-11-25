@@ -283,7 +283,7 @@ const Home = () => {
 
              }} />
              
-              {loader? "Loading":  <img style={{width:"100%",marginTop:"30px",borderRadius:"15px"}}  src = {post.imgUrl}/>}
+              {loader? "Loading":  <img style={{width:"100%",marginTop:"30px",height:"150px",borderRadius:"15px"}}  src = {post.imgUrl}/>}
               
              <p></p>
              
