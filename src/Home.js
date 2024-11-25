@@ -222,14 +222,14 @@ const Home = () => {
                      if(x.imgUrl.length>0){
                       return <div  style={{width:"100%",border:"1px solid",marginBottom:"15px",backgroundColor:"white",padding:"15px",borderRadius:"15px"}} className='myShadow' >
                       <div style={{display:"flex",width:"100%",alignItems:"center",justifyContent:"flex-start"}} >
-                      <CiUser size={40} />
-                      <h3>  {x.name}</h3>
+                      <CiUser size={30} />
+                      <p style={{opacity:"1"}}>  {x.name}</p>
                       </div>
                       <hr></hr>
                       <h5 style={{opacity:"0.5"}} >   
                         {x.value}</h5>
                         <p>{x.date}</p>
-                          <img src = {x.imgUrl}  style={{width:"100%",borderRadius:"15px",height:"300px"}} />
+                          <img src = {x.imgUrl}  style={{width:"100%",boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",borderRadius:"15px",height:"300px"}} />
                     </div>
                      }
                   })
