@@ -90,12 +90,14 @@ const Home = () => {
             
             console.log(response," <========= getData response")
 
-            if(response.statusText === 'OK'){
+            if(response.status === 200){
                
               setPosts(response.data);
-              window.location.reload();
+              
 
             }
+
+            window.location.reload();
             
             
 
