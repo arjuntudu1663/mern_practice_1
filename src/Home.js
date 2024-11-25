@@ -88,16 +88,10 @@ const Home = () => {
            try{
             const response = await axios.get("https://mern-practice-1-backend.vercel.app");
             
-            console.log(response," <========= getData response")
+            console.log(response," <========= getData response");
 
-            if(response.status === 200){
-               
-              setPosts(response.data);
-              
-
-            }
-
-            window.location.reload();
+           
+            
             
             
 
@@ -115,6 +109,7 @@ const Home = () => {
       
            
            try{ 
+
             const form = new FormData();
             form.append("id",location.state.id);
 
@@ -124,8 +119,8 @@ const Home = () => {
                "id":location.state.id
             });
             
-          setName(response.data.name);
-          console.log(name , " <==== profile name")
+            setName(response.data.name);
+            console.log(name , " <==== profile name");
             
             
 
