@@ -89,8 +89,23 @@ const Home = () => {
 
  }
  
- const likePost = async() => {
+ const likePost = async(id) => {
        
+    try{ 
+        
+      const response = await axios.post("https://mern-practice-1-backend.vercel.app/likePost",{
+        id:id
+      });
+      console.log(response)
+      window.location.reload();
+
+    }catch(e){
+       
+      if(e){
+        console.log(e);
+      }
+
+    }
      
    
  }
@@ -236,7 +251,7 @@ const Home = () => {
                           <h5 style={{opacity:"0.5"}} >   
                          {x.value}</h5>
                          <hr></hr>
-                         <Button variant='success' onClick={e=>likePost(x._id)} ><h4>Like</h4></Button>
+                         <Button variant='success' onClick={e=>likePost(x._id)} ><h4>Like</h4>{x.like}</Button>
                          </Card.Footer>
                       </Card>
                       
