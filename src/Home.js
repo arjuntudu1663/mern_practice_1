@@ -221,7 +221,7 @@ const Home = () => {
                   posts.map((x)=>{
                      if(x.imgUrl.length>0){
                       return <div  style={{width:"100%",border:"1px solid",marginBottom:"15px",backgroundColor:"white",padding:"15px",borderRadius:"15px"}} className='myShadow' >
-                      <div style={{display:"flex",width:"100%",justifyContent:"center"}} >
+                      <div style={{display:"flex",width:"100%",alignItems:"center",justifyContent:"flex-start"}} >
                       <CiUser size={40} />
                       <h3>  {x.name}</h3>
                       </div>
