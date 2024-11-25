@@ -28,6 +28,14 @@
 }
 
 @media only screen and (min-width:750px){
+   
+  .sizeChange{
+    width:88%;
+  }
+
+}
+
+@media only screen and (min-width:750px){
     
    .mybox{
      
@@ -53,6 +61,6 @@
   display: table;
   margin: 0 auto;
   width: 100%
-  +;
+  
 
 }
