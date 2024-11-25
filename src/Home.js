@@ -88,6 +88,13 @@ const Home = () => {
 
 
  }
+ 
+ const likePost = async() => {
+       
+     
+   
+ }
+ 
 
 
 
@@ -147,7 +154,7 @@ const Home = () => {
          
           <p></p>
           
-          
+          +----------
           <div style={{backgroundColor:"black",width:"100%",
             marginTop:"1px",borderRadius:"15px",height:"80px",
             display:"flex",padding:"35px",alignItems:"center",
@@ -221,13 +228,15 @@ const Home = () => {
                   posts.map((x)=>{
                      if(x.imgUrl.length>0){
                       return <Card style={{marginBottom:"15px"}}>
-                         <Card.Header style={{display:"flex",alignItems:"center",justifyContent:"flex-start"}}><CiUser size={30} /><h3 style={{opacity:"0.8"}}>{x.name}</h3></Card.Header>
+                         <Card.Header style={{display:"flex",alignItems:"center",justifyContent:"flex-start"}}><CiUser size={30} /><h3 style={{opacity:"0.8"}}>{x.name}</h3>
+                         {x._id}
+                         </Card.Header>
                          <Card.Img src = {x.imgUrl}  style={{width:"100%",height:"300px"}}/>
                          <Card.Footer>
                           <h5 style={{opacity:"0.5"}} >   
                          {x.value}</h5>
                          <hr></hr>
-                         <Button variant='success' ><h4>Like</h4></Button>
+                         <Button variant='success' onClick={e=>likePost(x._id)} ><h4>Like</h4></Button>
                          </Card.Footer>
                       </Card>
                       
