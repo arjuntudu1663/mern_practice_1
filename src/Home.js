@@ -132,7 +132,7 @@ const Home = () => {
         getProfile();
        
     
-    },[refresh])
+    },[posts])
 
   return (
 
