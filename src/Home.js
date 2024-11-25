@@ -72,6 +72,61 @@ const Home = () => {
     
   }
 
+  const getData = async() => {
+           
+    try{
+
+     const response = await axios.get("https://mern-practice-1-backend.vercel.app");
+     
+     console.log(response," <========= getData response");
+     setPosts(response.data);
+     
+
+     
+
+
+
+    }catch(e){
+       if(e){
+          console.log("first_api getting failed")
+       }
+    }
+
+   
+
+ }
+
+ const getProfile = async() => {
+      
+           
+  try{ 
+
+   const form = new FormData();
+   form.append("id",location.state.id);
+
+   console.log(form,"sending find value");
+
+   const response = await axios.post("https://mern-practice-1-backend.vercel.app/person_find",{
+      "id":location.state.id
+   });
+   
+   setName(response.data.name);
+   console.log(name , " <==== profile name");
+   
+   
+
+   
+
+  }catch(e){
+    if(e){
+      console.log("get profile error")
+    }
+  }
+
+ 
+
+}
+
  
 
   
@@ -80,63 +135,8 @@ const Home = () => {
   
     useEffect(()=>{ 
 
-      console.log("receiving id",id)
-     
-       
-        const getData = async() => {
-           
-           try{
-
-            const response = await axios.get("https://mern-practice-1-backend.vercel.app");
-            
-            console.log(response," <========= getData response");
-            setPosts(response.data);
-            
-
-            
-
-
-
-           }catch(e){
-              if(e){
-                 console.log("first_api getting failed")
-              }
-           }
-
-          
-
-        }
-
-        const getProfile = async() => {
       
-           
-           try{ 
-
-            const form = new FormData();
-            form.append("id",location.state.id);
-
-            console.log(form,"sending find value");
-
-            const response = await axios.post("https://mern-practice-1-backend.vercel.app/person_find",{
-               "id":location.state.id
-            });
-            
-            setName(response.data.name);
-            console.log(name , " <==== profile name");
-            
-            
-
-            
-
-           }catch(e){
-             if(e){
-               console.log("get profile error")
-             }
-           }
-
-          
-
-        }
+     
 
         getData();
         getProfile();
