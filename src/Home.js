@@ -257,8 +257,9 @@ const Home = () => {
                           <h5 style={{opacity:"0.5"}} >   
                          {x.value}</h5>
                          <hr></hr>
-                         <Button variant='success' onClick={e=>likePost(x._id)} ><h4>Like</h4></Button>
-                         {x.like}
+                        
+                          <h1 style={{marginLeft:"15px"}} > {x.like}</h1>
+                          <Button variant='success' onClick={e=>likePost(x._id)} ><h4>Like</h4></Button>
                          </Card.Footer>
 
                       </Card>
