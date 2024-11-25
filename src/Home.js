@@ -99,7 +99,7 @@ const Home = () => {
         id:id
       });
       console.log(response)
-      window.location.reload();
+      
 
     }catch(e){
        
