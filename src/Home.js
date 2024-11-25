@@ -2,6 +2,7 @@ import React, { useReducer } from 'react'
 import { useState,useEffect } from 'react';
 import { color, motion } from 'framer-motion'
 import { CiLocationArrow1 , CiTextAlignJustify ,CiBookmark ,CiLogout ,CiImageOn ,BiLoaderCircle ,CiUser  } from "react-icons/ci";
+import {SlLike } from 'react-icons/sl'
 import { Row,Col, Button ,Image,Form, Modal, Card  } from 'react-bootstrap';
 import Loader from "react-js-loader";
 
@@ -260,6 +261,7 @@ const Home = () => {
                         
                           <div style={{display:"flex",alignItems:"center",justifyContent:"flex-start"}} >
                           <h1 style={{marginLeft:"15px"}} > {x.like}</h1>
+                          <SlLike />
                           <Button variant='success' onClick={e=>likePost(x._id)} ><h4>Like</h4></Button>
                           </div>
                          </Card.Footer>
