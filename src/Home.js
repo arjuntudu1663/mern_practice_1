@@ -266,7 +266,7 @@ const Home = () => {
                           
                           initial = {{scale:1}}
                           whileHover={{scale:2}}
-                          style={{marginRight:"15px"}}
+                          style={{marginLeft:"15px"}}
                           >
                             <SlLike size ={30}  />
 
