@@ -86,17 +86,15 @@ const Home = () => {
         const getData = async() => {
            
            try{
+
             const response = await axios.get("https://mern-practice-1-backend.vercel.app");
             
             console.log(response," <========= getData response");
             setPosts(response.data);
-            
-            
 
-           
-            
-            
-            
+            window.location.reload(false)
+
+
 
            }catch(e){
               if(e){
