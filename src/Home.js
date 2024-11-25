@@ -53,7 +53,9 @@ const Home = () => {
     
        
     try{
+
       console.log("sending data",post);
+      console.log(name)
       
       const response2 = await axios.post("https://mern-practice-1-backend.vercel.app/create_post",post);
       console.log(response2 , " <========= add post response");
