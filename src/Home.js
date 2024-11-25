@@ -93,7 +93,7 @@ const Home = () => {
  
  const likePost = async(id) => {
 
-   console.log(post)
+  
        
     try{ 
 
@@ -103,7 +103,7 @@ const Home = () => {
         id:id
       });
 
-      console.log(response);
+      console.log(response)
       
 
     }catch(e){
@@ -264,6 +264,7 @@ const Home = () => {
                           
                           <motion.div 
                           
+                          onClick={e=>likePost(x._id)}
                           initial = {{scale:1}}
                           whileHover={{scale:2}}
                           style={{marginLeft:"15px"}}
