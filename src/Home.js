@@ -221,7 +221,7 @@ const Home = () => {
                   posts.map((x)=>{
                      if(x.imgUrl.length>0){
                       return <Card style={{marginBottom:"15px"}}>
-                         <Card.Header> <p style={{opacity:"1"}}>  {x.name}</p></Card.Header>
+                         <Card.Header>   {x.name}</Card.Header>
                          <Card.Img src = {x.imgUrl}  style={{width:"100%",borderRadius:"15px",height:"300px"}}/>
                          <Card.Footer>
                           <h5 style={{opacity:"0.5"}} >   
