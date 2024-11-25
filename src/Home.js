@@ -222,7 +222,7 @@ const Home = () => {
                      if(x.imgUrl.length>0){
                       return <Card style={{marginBottom:"15px"}}>
                          <Card.Header> <p style={{opacity:"1"}}>  {x.name}</p></Card.Header>
-                         <Card.Img src = {x.imgUrl}  style={{width:"100%",boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",borderRadius:"15px",height:"300px"}}/>
+                         <Card.Img src = {x.imgUrl}  style={{width:"100%",borderRadius:"15px",height:"300px"}}/>
                          <Card.Footer>
                           <h5 style={{opacity:"0.5"}} >   
                          {x.value}</h5>
