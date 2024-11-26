@@ -10,6 +10,7 @@ const Login = () => {
      
   const navigation = useNavigate();
   const [errorModalFlag,setErrorModalFlag] = useState(false);
+  const [msg,setMsg] = useState();
 
   const [register,setRegister] = useState({
         name : "",
@@ -45,14 +46,17 @@ const Login = () => {
 
           }else{
 
-            console.log("password not matching");
+             setMsg("password not matching");
+             setErrorModalFlag(true)
 
           }
 
       }catch(e){
 
          if(e){
-           console.log("person_register error")
+           
+          setMsg("could not registered your account")
+
          }
 
       }
@@ -69,6 +73,7 @@ const Login = () => {
         console.log(response.data,"<= login response")
         
         if(!response.data.status){
+          setMsg("wrong credentials")
           setErrorModalFlag(true)
         }
 
@@ -168,7 +173,7 @@ const Login = () => {
             <Button variant='link' >Forgot Password</Button>
             <Modal style={{marginTop:"50%"}} show={errorModalFlag} >
               <Modal.Body style={{display:"flex",justifyContent:"center"}}>
-                  Wrong Credentials
+                  <h5 style={{fontWeight:"bold"}} >{msg}</h5>
               </Modal.Body>
               <Modal.Footer>
                 <Button onClick={e=>setErrorModalFlag(false)} variant='danger' > close </Button>

@@ -2,6 +2,8 @@ import React, { useReducer } from 'react'
 import { useState,useEffect } from 'react';
 import { color, motion } from 'framer-motion'
 import { CiLocationArrow1 , CiTextAlignJustify ,CiBookmark ,CiLogout ,CiImageOn ,BiLoaderCircle ,CiUser  } from "react-icons/ci";
+import { BiSolidLike } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
 import {SlLike } from 'react-icons/sl'
 import { Row,Col, Button ,Image,Form, Modal, Card  } from 'react-bootstrap';
 import Loader from "react-js-loader";
@@ -34,6 +36,7 @@ const Home = () => {
   const [name,setName] = useState("");
   const [loader,setLoader] = useState(false);
   const [profile,setProfile] = useState({});
+  const [likeStatus,setLikeStatus] = useState(false)
   
   const [post,setPost] = useState({
      name:"",
@@ -103,8 +106,12 @@ const Home = () => {
         id:id,
         userId:userId
       });
-
-      console.log(response);
+      if(!response.data.value){
+        setLikeStatus(true)
+      }
+     if(response.statusText === 'OK'){
+       setLikeStatus(false)
+     }
       window.location.reload();
       
 
@@ -254,7 +261,7 @@ const Home = () => {
                      if(x.imgUrl.length>0){
                       return <Card style={{marginBottom:"15px"}}>
 
-                         <Card.Header style={{display:"flex",alignItems:"center",justifyContent:"flex-start"}}><CiUser size={30} /><h5 style={{opacity:"0.8"}}>{x.name}</h5>
+                         <Card.Header style={{display:"flex",alignItems:"center",justifyContent:"flex-start",padding:"15px"}}><CgProfile size={30} style={{marginRight:"15px"}}/><h5 style={{opacity:"0.6"}}>{x.name}</h5>
                          </Card.Header>
                          <Card.Img src = {x.imgUrl}  style={{width:"100%",height:"300px"}}/>
                          <Card.Footer>
@@ -271,8 +278,9 @@ const Home = () => {
                           whileHover={{scale:2}}
                           style={{marginLeft:"15px"}}
 
-                          >
-                            <SlLike   onClick={e=>likePost(x._id,location.state.id)} size ={30}  />
+                          > 
+                          { likeStatus ? <BiSolidLike/> :  <SlLike style={{opacity:"0.8"}}   onClick={e=>likePost(x._id,location.state.id)} size ={25}  /> }
+                           
 
                           </motion.div>
                        
