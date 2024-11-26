@@ -134,6 +134,7 @@ const Home = () => {
     
    console.log(response," <======== person find response");
    const name = response.data.name
+   setName(name)
 
    setPost((prev)=>{
     return {...prev,name:name}
@@ -266,12 +267,12 @@ const Home = () => {
                           
                           <motion.div 
                           
-                         
                           initial = {{scale:1}}
                           whileHover={{scale:2}}
                           style={{marginLeft:"15px"}}
+
                           >
-                            <SlLike  onClick={e=>likePost(x._id,location.state.id)} size ={30}  />
+                            <SlLike   onClick={e=>likePost(x._id,location.state.id)} size ={30}  />
 
                           </motion.div>
                        
