@@ -68,13 +68,13 @@ const Login = () => {
         const response = await axios.post("https://mern-practice-1-backend.vercel.app/login",person);
         console.log(response.data,"<= login response")
         
+        if(!response.data.status){
+          setErrorModalFlag(true)
+        }
+
         if(response.data.status){
            
           navigation("/home",{state:{id:response.data.value}})
-
-        }else{
-           
-          setErrorModalFlag(true)
 
         }
         
@@ -171,7 +171,7 @@ const Login = () => {
                   Wrong Credentials
               </Modal.Body>
               <Modal.Footer>
-                <Button onClick={e=>setErrorModalFlag(false)} > </Button>
+                <Button onClick={e=>setErrorModalFlag(false)} variant='danger' > close </Button>
               </Modal.Footer>
           </Modal>
     </div>
