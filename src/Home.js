@@ -39,7 +39,7 @@ const Home = () => {
      name:"",
      value:"",
      imgUrl:"",
-     like : 0
+     like : []
     
   })
 
@@ -91,7 +91,7 @@ const Home = () => {
 
  }
  
- const likePost = async(id) => {
+ const likePost = async(id,userId) => {
 
     console.log(id , " <==== sending post id")
        
@@ -100,10 +100,11 @@ const Home = () => {
       
         
       const response = await axios.post("https://mern-practice-1-backend.vercel.app/likePost",{
-        id:id
+        id:id,
+        userId:userId
       });
 
-      console.log(response)
+      console.log(response);
       window.location.reload();
       
 
@@ -252,7 +253,7 @@ const Home = () => {
                      if(x.imgUrl.length>0){
                       return <Card style={{marginBottom:"15px"}}>
 
-                         <Card.Header style={{display:"flex",alignItems:"center",justifyContent:"flex-start"}}><CiUser size={30} /><h3 style={{opacity:"0.8"}}>{x.name}</h3>
+                         <Card.Header style={{display:"flex",alignItems:"center",justifyContent:"flex-start"}}><CiUser size={30} /><h5 style={{opacity:"0.8"}}>{x.name}</h5>
                          </Card.Header>
                          <Card.Img src = {x.imgUrl}  style={{width:"100%",height:"300px"}}/>
                          <Card.Footer>
@@ -261,7 +262,7 @@ const Home = () => {
                          <hr></hr>
                         
                           <div style={{display:"flex",alignItems:"center",justifyContent:"flex-start"}} >
-                          <h1 style={{marginLeft:"15px"}} > {x.like}</h1>
+                          <h1 style={{marginLeft:"15px"}} > {x.like.length}</h1>
                           
                           <motion.div 
                           
@@ -270,7 +271,7 @@ const Home = () => {
                           whileHover={{scale:2}}
                           style={{marginLeft:"15px"}}
                           >
-                            <SlLike  onClick={e=>likePost(x._id)} size ={30}  />
+                            <SlLike  onClick={e=>likePost(x._id,location.state.id)} size ={30}  />
 
                           </motion.div>
                        
