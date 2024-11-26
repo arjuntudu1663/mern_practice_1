@@ -72,6 +72,10 @@ const Login = () => {
            
           navigation("/home",{state:{id:response.data.value}})
 
+        }else{
+           
+          setErrorModalFlag(true)
+
         }
         
         
