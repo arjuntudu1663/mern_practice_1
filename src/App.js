@@ -8,14 +8,19 @@ import Login from './Login';
 import Practice from './Practice';
 function App() {
   return (
+    <div style={{display:"flex",justifyContent:"center"}}>
     <BrowserRouter>
+       <div className='changeWidth' >
      <Routes>
+   
       <Route path = "/home"    element = {<Home/>} />
       <Route path = "/contact" element = {<Contact/>} />
       <Route path = "/" element = {<Login/>} />
       <Route path = "/practice" element = {<Practice/>}/>
     </Routes>
+      </div>
     </BrowserRouter>
+    </div>
   );
 }
 

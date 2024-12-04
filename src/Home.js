@@ -209,7 +209,7 @@ const Home = () => {
       </div>
        <p></p>
 
-       <div style={{height:"50px",marginTop:"15px"}} className='myCenterBox'>
+       <div style={{height:"50px",marginTop:"15px"}} >
          
                 <Row>
                   <Col style={{backgroundColor:"",marginBottom:"15px",height:"auto",display:"flex",flexDirection:"column",justifyContent:"space-between"}} lg = {6} sm = {12} >
@@ -217,13 +217,13 @@ const Home = () => {
                     
                     
                   </Col>
-                  <Col style={{height:"auto"}} lg = {6} sm = {12} >
+                  <Col style={{height:"auto"}} lg = {12} sm = {12} >
                       
                       
                       
 
 
-                          <div className='sizeChange'  style={{boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",paddingLeft:"35px",paddingRight:"35px",paddingTop:"35px",paddingBottom:"35px",backgroundColor:"#97e98e",borderRadius:"15px"}} >
+                          <div   style={{boxShadow: "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",width:"100%",padding:"45px",backgroundColor:"#97e98e",borderRadius:"15px"}} >
                                 <h5 className='desc_font' style={{fontWeight:"bold",marginBottom:"30px"}}  >Make a post</h5>
                                 <p></p>
                               <div style={{display:"flex"}} >

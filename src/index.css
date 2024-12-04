@@ -64,3 +64,26 @@
   
 
 }
+
+
+@media screen and (max-width:750px) {
+     
+  .changeWidth{
+     
+    width:100%
+
+  }
+   
+  
+}
+
+@media screen and (min-width:750px) {
+     
+  .changeWidth{
+     
+    width:30%
+
+  }
+   
+  
+}
