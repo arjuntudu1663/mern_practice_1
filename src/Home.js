@@ -254,7 +254,7 @@ const Home = () => {
                 }} >
                 
                 <p></p>
-
+                <h1>https://razorpay.me/@junbrand</h1>
                 {
 
                   posts.map((x)=>{
