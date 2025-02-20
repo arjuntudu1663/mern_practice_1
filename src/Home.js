@@ -254,7 +254,8 @@ const Home = () => {
                 }} >
                 
                 <p></p>
-                <h1>https://razorpay.me/@junbrand</h1>
+              
+<Button href = "https://razorpay.me/@junbrand"> payme  </Button>
                 {
 
                   posts.map((x)=>{
