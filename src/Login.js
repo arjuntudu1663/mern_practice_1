@@ -106,7 +106,7 @@ const Login = () => {
          element =  <><div style={{width:"100%",display:"flex",justifyContent:"center"}} >
                  
                  <img src={require("./main_pic.jpg")} style={{height:"150px",width:"310px",borderRadius:"100%",objectFit:"cover"}} />
-                
+                <h1>https://razorpay.me/@junbrand</h1>
               </div>
               <p></p>
               <input onChange={e=>setPerson((prev)=>{
